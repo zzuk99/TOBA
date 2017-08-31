@@ -21,8 +21,8 @@ public class Login extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    
+    public void processRequest(HttpServletRequest request, HttpServletResponse response)
 
             throws ServletException, IOException {
 
@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
 
     }
 
-}
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
