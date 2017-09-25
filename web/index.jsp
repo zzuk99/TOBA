@@ -4,6 +4,7 @@
     Author     : Whisper119
 --%>
 
+<%@page import="javax.xml.registry.infomodel.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <HTML>
@@ -20,6 +21,21 @@ String user = User.getAttribute("unmae").toString();
 <%
 }
 %>
+<form action="servlet/User" method="post"> 
+Name:<input type="text" name="userName"/><br/><br/>
+Password:<input type="password" name="userPass"/><br/><br/>
+Email Id:<input type="text" name="userEmail"/><br/><br/>
+Country:
+<select name="userCountry">
+<option>USA</option>
+<option>China</option>
+<option>other</option>
+</select>
+  
+<br/><br/>
+<input type="submit" value="register"/>
+  
+</form>
 </table>
 </body>
 <html>
