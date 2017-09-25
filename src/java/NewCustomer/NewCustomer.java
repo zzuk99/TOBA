@@ -12,23 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<form action="servlet/User" method="post"> 
-Name:<input type="text" name="userName"/><br/><br/>
-Password:<input type="password" name="userPass"/><br/><br/>
-Email Id:<input type="text" name="userEmail"/><br/><br/>
-Country:
-<select name="userCountry">
-<option>USA</option>
-<option>China</option>
-<option>other</option>
-</select>
-  
-<br/><br/>
-<input type="submit" value="register"/>
-  
-</form>
-
-
 /**
  *
  * @author Whisper119
