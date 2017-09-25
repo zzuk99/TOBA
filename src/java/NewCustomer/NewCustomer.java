@@ -11,13 +11,35 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 /**
  *
  * @author Whisper119
  */
 
 public class NewCustomer extends HttpServlet {
+public static void main(String args[]) {
+       User newCustomer = new User();
+      
+       /*
+       * Create a savings account with initial balance of 25.0
+       */
+       Account savingsAccount = new Account(newCustomer, 25.0);
+       savingsAccount.accountType = AccountType.SAVINGS;
+      
+       /*
+       * Create a checking account with initial balance of 0.0
+       */
+       Account checkingAccount = new Account(newCustomer, 0.0);
+       checkingAccount.accountType = AccountType.CHECKING;
+
+       /*
+       * Write to the database
+       */
+       AccountDB databaseWriter = new AccountDB();
+       databaseWriter.insert(savingsAccount);
+       databaseWriter.insert(checkingAccount);
+      
+   }
 
 
 
@@ -54,6 +76,7 @@ public class NewCustomer extends HttpServlet {
  
     }
 
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -136,16 +159,14 @@ public class NewCustomer extends HttpServlet {
         public UserDB() {
         }
     }
+
+    private static class AccountType {
+
+        public AccountType() {
+        }
+    }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-  
-    //public String getServletInfo() {
-   //     return "Short description";
-   // }// </editor-fold>
 
+ 
 
