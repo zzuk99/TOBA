@@ -17,32 +17,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class NewCustomer extends HttpServlet {
-public static void main(String args[]) {
-       User newCustomer = new User();
-      
-       /*
-       * Create a savings account with initial balance of 25.0
-       */
-       Account savingsAccount = new Account(newCustomer, 25.0);
-       savingsAccount.accountType = AccountType.SAVINGS;
-      
-       /*
-       * Create a checking account with initial balance of 0.0
-       */
-       Account checkingAccount = new Account(newCustomer, 0.0);
-       checkingAccount.accountType = AccountType.CHECKING;
-
-       /*
-       * Write to the database
-       */
-       AccountDB databaseWriter = new AccountDB();
-       databaseWriter.insert(savingsAccount);
-       databaseWriter.insert(checkingAccount);
-      
-   }
-
-
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -166,6 +140,7 @@ public static void main(String args[]) {
         }
     }
     }
+
 
 
  
