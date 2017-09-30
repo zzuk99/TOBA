@@ -11,6 +11,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.persistence;
+
+
 /**
  *
  * @author Whisper119
@@ -124,6 +128,7 @@ public class NewCustomer extends HttpServlet {
         }
     }
 
+ 
     private static class UserDB {
 
         private static void insert(User user) {
@@ -133,6 +138,13 @@ public class NewCustomer extends HttpServlet {
         public UserDB() {
         }
     }
+   //public class DBUtil {
+private static final EntityManagerFactory emf= 
+    persistence.createEntityManagerFactory("emailListPU");
+    
+public static EntityManagerFactory getEmFactory() {
+return emf;
+}
 
     private static class AccountType {
 
