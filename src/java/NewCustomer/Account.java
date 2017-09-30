@@ -14,7 +14,7 @@ import com.sun.tools.xjc.reader.xmlschema.bindinfo.BIConversion.User;
  *
  * @author Whisper119
  */
-class Account {
+class Account { 
 /*
 * ENUM for account types
 */
