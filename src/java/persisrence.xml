@@ -18,7 +18,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
             <property name="javax.persistence.schema-generation.database.action"
                 value="create"/>
         </properties>
-   
+    
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
