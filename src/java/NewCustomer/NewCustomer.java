@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.persistence;
 
-
+  
 /**
  *
  * @author Whisper119
