@@ -11,17 +11,15 @@ import javax.servlet.*;
 
 import javax.servlet.http.*;
 
-
 public class Login extends HttpServlet {
 
-    /**
+ /**
      *
      * @param request
      * @param response
      * @throws ServletException
      * @throws IOException
      */
-    
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
 
             throws ServletException, IOException {
@@ -101,4 +99,33 @@ public class Login extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+public final class LoggingFilter implements Filter
+{
+private FilterConfig filterConfigObj = null;
+
+@Override
+public void init(FilterConfig filterConfigObj) {
+this.filterConfigObj = filterConfigObj;
 }
+
+@Override
+public void doFilter(ServletRequest request,
+ServletResponse response,
+FilterChain chain)
+throws IOException, ServletException
+{
+String remoteAddress = request.getRemoteAddr();
+String uri = ((HttpServletRequest) request).getRequestURI();
+String protocol = request.getProtocol();
+
+chain.doFilter(request, response);
+
+}
+
+        @Override
+        public void destroy() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+}
+
